@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53A4EC19-605F-4242-B167-59D3FD6393AB}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.Prism</RootNamespace>
+    <AssemblyName>Prism.Fuse</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents">
+      <HintPath>..\..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\Portable.CommonServiceLocator.1.2.2\lib\portable-net4+sl4+wp7+win8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib.Extensions" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WP8\Prism.Fuse\AppManifestHelper.cs">
+      <Link>AppManifestHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\CompositeCommand.cs">
+      <Link>Commands\CompositeCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommand.cs">
+      <Link>Commands\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommandBase.cs">
+      <Link>Commands\DelegateCommandBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommandExtensions.cs">
+      <Link>Commands\DelegateCommandExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\WeakEventHandlerManager.cs">
+      <Link>Commands\WeakEventHandlerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Converters\CountToVisibilityConverter.cs">
+      <Link>Converters\CountToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Converters\NullableConverter.cs">
+      <Link>Converters\NullableConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Extensions\AssemblyExtensions.cs">
+      <Link>Extensions\AssemblyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Extensions\CollectionExtensions.cs">
+      <Link>Extensions\CollectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Extensions\VisualTreeExtensions.cs">
+      <Link>Extensions\VisualTreeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IActiveAware.cs">
+      <Link>IActiveAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IoC\TinyIoC.cs">
+      <Link>IoC\TinyIoC.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IoC\TinyIocServiceLocator.cs">
+      <Link>IoC\TinyIocServiceLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ISuspensionManager.cs">
+      <Link>ISuspensionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\Category.cs">
+      <Link>Logging\Category.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\EmptyLogger.cs">
+      <Link>Logging\EmptyLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\ILoggerFacade.cs">
+      <Link>Logging\ILoggerFacade.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\Priority.cs">
+      <Link>Logging\Priority.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\NamescopeBinding.cs">
+      <Link>NamescopeBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\NavigationParameters.cs">
+      <Link>NavigationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Navigation\INavigationService.cs">
+      <Link>Navigation\INavigationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Navigation\NavigationService.cs">
+      <Link>Navigation\NavigationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Navigation\NavigationServiceExtensions.cs">
+      <Link>Navigation\NavigationServiceExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Navigation\PrismNavigationService.cs">
+      <Link>Navigation\PrismNavigationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ObservableObject.cs">
+      <Link>ObservableObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\PhonePrismApplication.cs">
+      <Link>PhonePrismApplication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\PrismApplication.cs">
+      <Link>PrismApplication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\PrismApplicationBase.cs">
+      <Link>PrismApplicationBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\IApplicationLifecycleAware.cs">
+      <Link>Regions\IApplicationLifecycleAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\IConfirmNavigationRequest.cs">
+      <Link>Regions\IConfirmNavigationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\INavigationAware.cs">
+      <Link>Regions\INavigationAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\NavigationContext.cs">
+      <Link>Regions\NavigationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ServiceLocatorExtensions.cs">
+      <Link>ServiceLocatorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBar.cs">
+      <Link>Shell\ApplicationBar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBarIconButton.cs">
+      <Link>Shell\ApplicationBarIconButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBarIconButtonList.cs">
+      <Link>Shell\ApplicationBarIconButtonList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBarItemList.cs">
+      <Link>Shell\ApplicationBarItemList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBarMenuItem.cs">
+      <Link>Shell\ApplicationBarMenuItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\ApplicationBarMenuItemList.cs">
+      <Link>Shell\ApplicationBarMenuItemList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Shell\PhoneApplicationPage.cs">
+      <Link>Shell\PhoneApplicationPage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\SuspensionManager.cs">
+      <Link>SuspensionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\SuspensionManagerException.cs">
+      <Link>SuspensionManagerException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\UriParsingHelper.cs">
+      <Link>UriParsingHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewLocator.cs">
+      <Link>ViewLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModelLocator.cs">
+      <Link>ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\BindableBase.cs">
+      <Link>ViewModel\BindableBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\DataTemplateSelector.cs">
+      <Link>ViewModel\DataTemplateSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\ErrorsContainer.cs">
+      <Link>ViewModel\ErrorsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\PropertySupport.cs">
+      <Link>ViewModel\PropertySupport.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\ValidatableBindableBase.cs">
+      <Link>ViewModel\ValidatableBindableBase.cs</Link>
+    </Compile>
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WeakReference`T.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!--  
+   To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

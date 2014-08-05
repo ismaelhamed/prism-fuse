@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14CC77B6-4E58-4F10-8443-A0C77DC2C07A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.Prism</RootNamespace>
+    <AssemblyName>Prism.Fuse</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\CompositeCommand.cs">
+      <Link>Commands\CompositeCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommand.cs">
+      <Link>Commands\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommandBase.cs">
+      <Link>Commands\DelegateCommandBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\DelegateCommandExtensions.cs">
+      <Link>Commands\DelegateCommandExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Commands\WeakEventHandlerManager.cs">
+      <Link>Commands\WeakEventHandlerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IActiveAware.cs">
+      <Link>IActiveAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IoC\TinyIoC.cs">
+      <Link>IoC\TinyIoC.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\IoC\TinyIocServiceLocator.cs">
+      <Link>IoC\TinyIocServiceLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\Category.cs">
+      <Link>Logging\Category.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\EmptyLogger.cs">
+      <Link>Logging\EmptyLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\ILoggerFacade.cs">
+      <Link>Logging\ILoggerFacade.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Logging\Priority.cs">
+      <Link>Logging\Priority.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\NavigationParameters.cs">
+      <Link>NavigationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\PrismApplicationBase.cs">
+      <Link>PrismApplicationBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\IApplicationLifecycleAware.cs">
+      <Link>Regions\IApplicationLifecycleAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\IConfirmNavigationRequest.cs">
+      <Link>Regions\IConfirmNavigationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Regions\INavigationAware.cs">
+      <Link>Regions\INavigationAware.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModelLocator.cs">
+      <Link>ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\BindableBase.cs">
+      <Link>ViewModel\BindableBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\ErrorsContainer.cs">
+      <Link>ViewModel\ErrorsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\PropertySupport.cs">
+      <Link>ViewModel\PropertySupport.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\ValidatableBindableBase.cs">
+      <Link>ViewModel\ValidatableBindableBase.cs</Link>
+    </Compile>
+    <Compile Include="AppManifestHelper.cs" />
+    <Compile Include="Converters\BooleanConverter.cs" />
+    <Compile Include="Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullableValueConverter.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="IoC\TypeExtender.cs" />
+    <Compile Include="ISuspensionManager.cs" />
+    <Compile Include="Navigation\INavigationService.cs" />
+    <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="Navigation\NavigationServiceExtensions.cs" />
+    <Compile Include="Navigation\PrismNavigationService.cs" />
+    <Compile Include="PrismApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regions\NavigationContext.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="ResourceLoaderAdapter.cs" />
+    <Compile Include="UniversalPrismApplication.cs" />
+    <Compile Include="SuspensionManager.cs" />
+    <Compile Include="SuspensionManagerException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents">
+      <HintPath>..\..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\Portable.CommonServiceLocator.1.2.2\lib\portable-net4+sl4+wp7+win8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

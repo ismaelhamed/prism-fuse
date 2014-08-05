@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27A214F5-1369-4C73-9617-1B33BD198DAB}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.Prism.Interactivity</RootNamespace>
+    <AssemblyName>Prism.Fuse.Interactivity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Interactions, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Samples\Quickstart\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Interactivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Samples\Quickstart\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\ApplicationBarBehavior.cs">
+      <Link>ApplicationBarBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\ApplicationBarBehaviorItem.cs">
+      <Link>ApplicationBarBehaviorItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\Behavior.cs">
+      <Link>Behavior.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\Behavior`T.cs">
+      <Link>Behavior`T.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\BindingChangedEventArgs.cs">
+      <Link>BindingChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\DependencyPropertyListener.cs">
+      <Link>DependencyPropertyListener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\Confirmation.cs">
+      <Link>InteractionRequest\Confirmation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\ConfirmationChildWindow.xaml.cs">
+      <Link>InteractionRequest\ConfirmationChildWindow.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\IInteractionRequest.cs">
+      <Link>InteractionRequest\IInteractionRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\InteractionRequest.cs">
+      <Link>InteractionRequest\InteractionRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\InteractionRequestBehavior.cs">
+      <Link>InteractionRequest\InteractionRequestBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\InteractionRequestedEventArgs.cs">
+      <Link>InteractionRequest\InteractionRequestedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\MessageBoxAction.cs">
+      <Link>InteractionRequest\MessageBoxAction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\Notification.cs">
+      <Link>InteractionRequest\Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\NotificationChildWindow.xaml.cs">
+      <Link>InteractionRequest\NotificationChildWindow.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\PopupChildWindow.cs">
+      <Link>InteractionRequest\PopupChildWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\PopupChildWindowAction.cs">
+      <Link>InteractionRequest\PopupChildWindowAction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\PopupChildWindowActionBase.cs">
+      <Link>InteractionRequest\PopupChildWindowActionBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\InvokeCommandAction.cs">
+      <Link>InvokeCommandAction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\UpdatePasswordBindingOnPropertyChanged.cs">
+      <Link>UpdatePasswordBindingOnPropertyChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse.Interactivity\UpdateTextBindingOnPropertyChanged.cs">
+      <Link>UpdateTextBindingOnPropertyChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\ConfirmationChildWindow.xaml">
+      <Link>InteractionRequest\ConfirmationChildWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\WP8\Prism.Fuse.Interactivity\InteractionRequest\NotificationChildWindow.xaml">
+      <Link>InteractionRequest\NotificationChildWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prism.Fuse\Prism.Fuse.csproj">
+      <Project>{53A4EC19-605F-4242-B167-59D3FD6393AB}</Project>
+      <Name>Prism.Fuse</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

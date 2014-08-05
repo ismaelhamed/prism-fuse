@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F8A516F-A457-4D4B-8470-F9212F53ECC3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{618B5205-6E94-4922-853C-2E795313D006}"
+	ProjectSection(SolutionItems) = preProject
+		Eula.txt = Eula.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism.Fuse", "WP7\Prism.Fuse\Prism.Fuse.csproj", "{53A4EC19-605F-4242-B167-59D3FD6393AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism.Fuse.Interactivity", "WP7\Prism.Fuse.Interactivity\Prism.Fuse.Interactivity.csproj", "{27A214F5-1369-4C73-9617-1B33BD198DAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53A4EC19-605F-4242-B167-59D3FD6393AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A4EC19-605F-4242-B167-59D3FD6393AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A4EC19-605F-4242-B167-59D3FD6393AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A4EC19-605F-4242-B167-59D3FD6393AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A214F5-1369-4C73-9617-1B33BD198DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A214F5-1369-4C73-9617-1B33BD198DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A214F5-1369-4C73-9617-1B33BD198DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A214F5-1369-4C73-9617-1B33BD198DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

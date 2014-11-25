@@ -25,7 +25,7 @@ namespace Microsoft.Practices.Prism
         }
 
         /// <summary>
-        /// Gets or sets the entry with the specified key in the NameValueCollection.
+        /// Gets the entry with the specified key in the NameValueCollection.
         /// </summary>
         /// <param name="name">The String key of the entry to locate. The key can be null.</param>
         /// <returns>A <see cref="T:System.String" /> that contains the comma-separated list of values associated with the specified key, if found; otherwise, null.</returns>

@@ -19,8 +19,7 @@ namespace Microsoft.Practices.Prism
         /// <summary>
         /// Occurs when an application is started.
         /// </summary>
-        [Obsolete("The Startup event should not be used by Windows Phone applications. Instead, use the overridable event handlers " +
-            "(OnLaunching, OnClosing, OnActivated, OnDeactivated) exposed by the Application class.")]
+        [Obsolete("The Startup event should not be used by Windows Phone applications. Instead, use the overridable event handlers (OnLaunching, OnClosing, OnActivated, OnDeactivated) exposed by the Application class.")]
 #pragma warning disable 67
         public new event StartupEventHandler Startup;
 #pragma warning restore 67

@@ -2,14 +2,12 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
 
 namespace Microsoft.Practices.Prism.ViewModel
 {
     /// <summary>
     /// Base class for items that support property notification.
     /// </summary>
-    [DataContract]
     public abstract class BindableBase : INotifyPropertyChanged
     {
         /// <summary>

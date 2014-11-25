@@ -100,14 +100,20 @@ namespace Microsoft.Practices.Prism.Navigation
             // Gets the pack uri from the View type. 
             var uri = ViewLocator.DefaultViewTypeToPackUriResolver(sourcePageType);
 
-            if (parameters != null)
+            if (removeEntryFromBackStack)
             {
-                if (removeEntryFromBackStack)
-                    parameters.Add("removeEntryFromBackStack", "true");
+                if (parameters == null)
+                {
+                    parameters = new NavigationParameters();
+                }
 
-                uri += parameters.ToString();
+                parameters.Add("removeEntryFromBackStack", "true");
             }
             
+            if (parameters != null)
+            {
+                uri += parameters.ToString();
+            }          
 
             // Creates an Uri using both the view path and the queryString from the parameters.
             return rootFrame.Navigate(new Uri(uri, UriKind.Relative));

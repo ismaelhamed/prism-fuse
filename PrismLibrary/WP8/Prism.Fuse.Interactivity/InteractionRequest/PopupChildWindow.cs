@@ -54,46 +54,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
         {
             DefaultStyleKey = typeof(PopupChildWindow);
         }
-
-        /// <summary>
-        /// Called when the back key is pressed. This event handler cancels the backward navigation and dismisses the message box.
-        /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="args">The event information.</param>
-        private void PageBackKeyPress(object sender, CancelEventArgs args)
-        {
-            args.Cancel = true;
-            Close();
-        }
-
-        private void PopupChildWindow_LayoutUpdated(object sender, EventArgs args)
-        {
-            var storyboard = XamlReader.Load(SwivelInStoryboard) as Storyboard;
-            if (storyboard != null)
-            {
-                Projection = new PlaneProjection();
-                Storyboard.SetTarget(storyboard, this);
-
-                storyboard.Completed += (s, e) => storyboard.Stop();
-                storyboard.Begin();
-            }
-
-            LayoutUpdated -= PopupChildWindow_LayoutUpdated;
-        }
-
-        /// <summary>
-        /// Raises the <see cref="E:Microsoft.Practices.Prism.Interactivity.InteractionRequest.PopupChildWindow.Closed" /> event.
-        /// </summary>
-        /// <param name="e">The event data.</param>
-        protected virtual void OnClosed(EventArgs e)
-        {
-            var handler = Closed;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-        }
-
+        
         /// <summary>
         /// Opens a <see cref="T:Microsoft.Practices.Prism.Interactivity.InteractionRequest.PopupChildWindow" /> and returns without waiting 
         /// for the <see cref="T:Microsoft.Practices.Prism.Interactivity.InteractionRequest.PopupChildWindow" /> to close.
@@ -103,7 +64,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
         {
             if (IsOpen) return;
 
-            LayoutUpdated += PopupChildWindow_LayoutUpdated;
+            LayoutUpdated += OnLayoutUpdated;
 
             page = VisualTreeHelpers.GetCurrentPhoneApplicationPage();
 
@@ -115,7 +76,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
                     page.ApplicationBar.IsVisible = false;
                 }
 
-                page.BackKeyPress += PageBackKeyPress;
+                page.BackKeyPress += OnPageBackKeyPress;
             }
 
             if (ChildWindowPopup == null)
@@ -155,7 +116,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
         {
             if (!IsOpen) return;
 
-            var storyboard = XamlReader.Load(SwivelOutStoryboard) as Storyboard;
+            var storyboard = XamlReader.Load(TransitionOutStoryboard) as Storyboard;
             if (storyboard != null)
             {
                 Storyboard.SetTarget(storyboard, this);
@@ -173,7 +134,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
                         if (page.ApplicationBar != null)
                             page.ApplicationBar.IsVisible = shouldRestoreApplicationBar;
 
-                        page.BackKeyPress -= PageBackKeyPress;
+                        page.BackKeyPress -= OnPageBackKeyPress;
                         page = null;
                     }
                 };
@@ -181,7 +142,51 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
             }
         }
 
-        private const string SwivelInStoryboard =
+        protected virtual void PrepareTransform()
+        {
+            Projection = new PlaneProjection();
+        }
+
+        /// <summary>
+        /// Called when the back key is pressed. This event handler cancels the backward navigation and dismisses the message box.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="args">The event information.</param>
+        private void OnPageBackKeyPress(object sender, CancelEventArgs args)
+        {
+            args.Cancel = true;
+            Close();
+        }
+
+        private void OnLayoutUpdated(object sender, EventArgs args)
+        {
+            var storyboard = XamlReader.Load(TransitionInStoryboard) as Storyboard;
+            if (storyboard != null)
+            {
+                PrepareTransform();
+                Storyboard.SetTarget(storyboard, this);
+
+                storyboard.Completed += (s, e) => storyboard.Stop();
+                storyboard.Begin();
+            }
+
+            LayoutUpdated -= OnLayoutUpdated;
+        }
+
+        /// <summary>
+        /// Raises the <see cref="E:Microsoft.Practices.Prism.Interactivity.InteractionRequest.PopupChildWindow.Closed" /> event.
+        /// </summary>
+        /// <param name="e">The event data.</param>
+        private void OnClosed(EventArgs e)
+        {
+            var handler = Closed;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        protected string TransitionInStoryboard =
           @"<Storyboard xmlns=""http://schemas.microsoft.com/winfx/2006/xaml/presentation"">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty=""(UIElement.Projection).(PlaneProjection.RotationX)"">
                     <EasingDoubleKeyFrame KeyTime=""0"" Value=""-45"" />                    
@@ -199,7 +204,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>";
 
-        private const string SwivelOutStoryboard =
+        protected string TransitionOutStoryboard =
           @"<Storyboard xmlns=""http://schemas.microsoft.com/winfx/2006/xaml/presentation"">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty=""(UIElement.Projection).(PlaneProjection.RotationX)"">
                     <EasingDoubleKeyFrame KeyTime=""0"" Value=""0""/>

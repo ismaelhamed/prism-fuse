@@ -20,6 +20,8 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <SupportedCultures>
+    </SupportedCultures>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,13 +55,11 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
       <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xaml.Interactions, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Samples\Quickstart\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactions.dll</HintPath>
+    <Reference Include="Microsoft.Xaml.Interactions">
+      <HintPath>..\..\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xaml.Interactivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Samples\Quickstart\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactivity.dll</HintPath>
+    <Reference Include="Microsoft.Xaml.Interactivity">
+      <HintPath>..\..\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.IO">
       <HintPath>..\..\packages\Microsoft.Bcl.1.1.9\lib\sl4-windowsphone71\System.IO.dll</HintPath>

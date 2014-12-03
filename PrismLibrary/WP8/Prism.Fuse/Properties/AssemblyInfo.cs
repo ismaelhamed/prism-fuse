@@ -13,7 +13,7 @@ using System.Windows.Markup;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("d921bb1c-130d-4036-a006-e75aa39295a7")]
 
-[assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism.Shell;assembly=Prism.Fuse", "mbs")]
+[assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism;assembly=Prism.Fuse", "prism")]
+[assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism;assembly=Prism.Fuse", "Microsoft.Practices.Prism")]
+[assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism.Shell;assembly=Prism.Fuse", "prismShell")]
 [assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism.Shell;assembly=Prism.Fuse", "Microsoft.Practices.Prism.Shell")]
-[assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism.Controls;assembly=Prism.Fuse", "mb")]
-[assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism.Controls;assembly=Prism.Fuse", "Microsoft.Phone.Controls.Controls")]

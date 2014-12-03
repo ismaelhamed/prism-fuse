@@ -136,11 +136,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xaml.Interactions">
-      <HintPath>..\..\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactions.dll</HintPath>
+    <Reference Include="Microsoft.Xaml.Interactions, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\BehaviorSDK.1.0.4\lib\sl4-wp71\Microsoft.Xaml.Interactions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xaml.Interactivity">
-      <HintPath>..\..\packages\BehaviorSDK.1.0.0.1\lib\sl4-wp71\Microsoft.Xaml.Interactivity.dll</HintPath>
+    <Reference Include="Microsoft.Xaml.Interactivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\BehaviorSDK.1.0.4\lib\sl4-wp71\Microsoft.Xaml.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

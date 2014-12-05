@@ -101,7 +101,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
             if (AssociatedObject != null)
             {
                 //CultureInfo currentCulture = CultureInfo.CurrentCulture;
-                //String cannotAttachBehaviorMultipleTimesExceptionMessage = ResourceHelper.CannotAttachBehaviorMultipleTimesExceptionMessage;
+                //String cannotAttachBehaviorMultipleTimesExceptionMessage = Resources.CannotAttachBehaviorMultipleTimesExceptionMessage;
                 //Object[] objArray = new Object[] { associatedObject, this.associatedObject };
                 //throw new InvalidOperationException(String.Format(currentCulture, cannotAttachBehaviorMultipleTimesExceptionMessage, objArray));
                 throw new InvalidOperationException("CannotAttachBehaviorMultipleTimesExceptionMessage");
@@ -195,7 +195,7 @@ namespace Microsoft.Practices.Prism.Interactivity.InteractionRequest
             if (runtimeEvent == null)
             {
                 //CultureInfo currentCulture = CultureInfo.CurrentCulture;
-                //String cannotFindEventNameExceptionMessage = ResourceHelper.CannotFindEventNameExceptionMessage;
+                //String cannotFindEventNameExceptionMessage = Resources.CannotFindEventNameExceptionMessage;
                 //Object[] objArray = new Object[] { this.EventName, type.get_Name() };
                 throw new ArgumentException("CannotFindEventNameExceptionMessage");
             }

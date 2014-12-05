@@ -158,7 +158,7 @@ namespace Microsoft.Practices.Prism.Properties
 
         public static string GetString(string resourceName)
         {
-            return ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactions/Strings").GetString(resourceName);
+            return ResourceLoader.GetForCurrentView("Prism.Fuse/Resources").GetString(resourceName);
         }
     }
 }

@@ -48,13 +48,13 @@ namespace Microsoft.Practices.Prism.Interactivity
 
             if (AssociatedObject != null)
             {
-                throw new InvalidOperationException(ResourceHelper.CannotHostBehaviorMultipleTimesExceptionMessage);
+                throw new InvalidOperationException(Resources.CannotHostBehaviorMultipleTimesExceptionMessage);
             }
 
             if (dependencyObject != null && !AssociatedType.IsInstanceOfType(dependencyObject))
             {
                 var currentCulture = CultureInfo.CurrentCulture;
-                var typeConstraintViolatedExceptionMessage = ResourceHelper.TypeConstraintViolatedExceptionMessage;
+                var typeConstraintViolatedExceptionMessage = Resources.TypeConstraintViolatedExceptionMessage;
                 var name = new object[] { GetType().Name, dependencyObject.GetType().Name, AssociatedType.Name };
                 throw new InvalidOperationException(string.Format(currentCulture, typeConstraintViolatedExceptionMessage, name));
             }

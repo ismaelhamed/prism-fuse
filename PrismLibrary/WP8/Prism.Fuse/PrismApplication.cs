@@ -86,6 +86,7 @@ namespace Microsoft.Practices.Prism
         protected virtual void ConfigureContainer()
         {
             Container.Register(Logger);
+            Container.Register(SuspensionManager);
             Container.Register<INavigationService>((c, p) => new NavigationService(RootFrame));
 
             if (useDefaultConfiguration)

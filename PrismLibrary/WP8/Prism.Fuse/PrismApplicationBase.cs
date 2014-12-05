@@ -12,7 +12,11 @@
         /// <summary>
         /// Gets the <see cref="ILoggerFacade"/> for the application.
         /// </summary>
-        protected ILoggerFacade Logger { get; set; }
+        protected ILoggerFacade Logger
+        {
+            get; 
+            set;
+        }
 
         /// <summary>
         /// Create the <see cref="ILoggerFacade" /> used by the bootstrapper.
@@ -26,7 +30,11 @@
         /// <summary>
         /// Gets the default <see cref="ISuspensionManager"/> for the application.
         /// </summary>
-        protected ISuspensionManager SuspensionManager { get; set; }
+        protected ISuspensionManager SuspensionManager
+        {
+            get; 
+            set;
+        }
 
         /// <summary>
         /// Creates the <see cref="SuspensionManager"/> that will be used as the default.

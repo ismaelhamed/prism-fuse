@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Prism.Fuse.Interactivity</id>
+        <version>0.9.5-beta</version>
+        <title>Prism Fuse Interactivity</title>
+        <authors>Ismael Hamed</authors>
+        <owners>Ismael Hamed</owners>
+        <projectUrl>https://github.com/ismaelhamed/prism-fuse</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Prism helps you more easily design and build rich, flexible, and easy to maintain Windows Phone and Windows Store applications. These libraries assist in buildling loosley coupled applications as well as support implementing MVVM in your application, manage state, perform navigation, implement data binding, and commands.</description>
+        <language>en-US</language>
+        <dependencies>
+            <group targetFramework="WindowsPhone7.1">
+                <dependency id="BehaviorSDK" version="1.0.4" />
+                <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
+                <dependency id="Prism.Fuse" version="0.9.5-beta" />
+            </group>
+            <group targetFramework="WindowsPhone8.0">
+                <dependency id="BehaviorSDK" version="1.0.4" />
+                <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
+                <dependency id="Prism.Fuse" version="0.9.5-beta" />
+            </group>
+            <group targetFramework="Windows8.1">
+                <dependency id="Prism.Fuse" version="0.9.5-beta" />
+            </group>
+            <group targetFramework="WindowsPhoneApp8.1">
+                <dependency id="Prism.Fuse" version="0.9.5-beta" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\PrismLibrary\WP7\Prism.Fuse.Interactivity\Bin\Release\Prism.Fuse.Interactivity.dll" target="lib\wp71" /> 
+        <file src="..\PrismLibrary\WP8\Prism.Fuse.Interactivity\Bin\Release\Prism.Fuse.Interactivity.dll" target="lib\wp8" /> 
+        <file src="..\PrismLibrary\WIN81\Prism.Fuse.Interactivity\Bin\Release\Prism.Fuse.Interactivity.dll" target="lib\netcore45" /> 
+        <file src="..\PrismLibrary\WP81\Prism.Fuse.Interactivity\Bin\Release\Prism.Fuse.Interactivity.dll" target="lib\wpa81" /> 
+
+        <file src="tools\install.ps1" target="tools\netcore45" /> 
+        <file src="tools\uninstall.ps1" target="tools\netcore45" /> 
+        <file src="tools\install.ps1" target="tools\wpa81" /> 
+        <file src="tools\uninstall.ps1" target="tools\wpa81" />       
+    </files>    
+</package>

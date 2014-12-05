@@ -115,8 +115,8 @@
     <Compile Include="..\..\WIN81\Prism.Fuse.Interactivity\ReflectionExtensions.cs">
       <Link>ReflectionExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\WIN81\Prism.Fuse.Interactivity\ResourceHelper.cs">
-      <Link>ResourceHelper.cs</Link>
+    <Compile Include="..\..\WIN81\Prism.Fuse.Interactivity\Resources.cs">
+      <Link>Resources.cs</Link>
     </Compile>
     <Compile Include="..\..\WIN81\Prism.Fuse.Interactivity\UpdatePasswordBindingOnPropertyChanged.cs">
       <Link>UpdatePasswordBindingOnPropertyChanged.cs</Link>
@@ -133,13 +133,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Strings\en-US\Resources.resw" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Prism.Fuse\Prism.Fuse.csproj">
       <Project>{27ebee65-a4dd-4a51-be63-0daec0310905}</Project>
       <Name>Prism.Fuse</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\..\WIN81\Prism.Fuse.Interactivity\Strings\en-US\Resources.resw">
+      <Link>Strings\en-US\Resources.resw</Link>
+    </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

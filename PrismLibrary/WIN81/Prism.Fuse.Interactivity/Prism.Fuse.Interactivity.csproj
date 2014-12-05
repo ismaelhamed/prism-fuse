@@ -120,7 +120,7 @@
     <Compile Include="InvokeCommandAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionExtensions.cs" />
-    <Compile Include="ResourceHelper.cs" />
+    <Compile Include="Resources.cs" />
     <Compile Include="UpdatePasswordBindingOnPropertyChanged.cs" />
     <Compile Include="UpdateTextBindingOnPropertyChanged.cs" />
   </ItemGroup>

@@ -102,8 +102,7 @@ namespace Microsoft.Practices.Prism
         /// </summary>
         protected override void ConfigureServiceLocator()
         {
-            var serviceLocator = Container.Resolve<IServiceLocator>();
-            ServiceLocator.SetLocatorProvider(() => serviceLocator);
+            ServiceLocator.SetLocatorProvider(() => Container.Resolve<IServiceLocator>());
         }
 
         /// <summary>

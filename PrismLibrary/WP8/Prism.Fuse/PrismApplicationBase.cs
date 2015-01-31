@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Practices.Prism
+﻿using Microsoft.Practices.Prism.ViewModel;
+
+namespace Microsoft.Practices.Prism
 {
     using Microsoft.Practices.Prism.Logging;
 

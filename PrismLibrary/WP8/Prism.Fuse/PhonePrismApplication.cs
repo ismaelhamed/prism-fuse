@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Practices.Prism.ViewModel;
 
 namespace Microsoft.Practices.Prism
 {
@@ -72,6 +73,8 @@ namespace Microsoft.Practices.Prism
             // Register RootFrame with the SuspensionManager
             SuspensionManager.RegisterFrame(RootFrame, "AppFrame");
 
+            OnRegisterKnownTypesForSerialization();
+
             // Create an instance of the PrismNavigationService 
             prismNavigationService = new PrismNavigationService(RootFrame, SuspensionManager);
 
@@ -133,6 +136,14 @@ namespace Microsoft.Practices.Prism
         /// <param name="e">Provides data for the Application.UnhandledException event.</param>
         protected virtual void OnUnhandledException(ApplicationUnhandledExceptionEventArgs e)
         { }
+
+        /// <summary>
+        /// Used for setting up the list of known types for the SessionStateService, using the RegisterKnownType method.
+        /// </summary>
+        protected virtual void OnRegisterKnownTypesForSerialization()
+        {
+            SuspensionManager.RegisterKnownType(typeof(BindableBase));
+        }
 
 #if WINDOWS_PHONE_8
         /// <summary> 

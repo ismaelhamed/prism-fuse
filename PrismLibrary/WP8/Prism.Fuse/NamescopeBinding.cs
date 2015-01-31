@@ -9,8 +9,8 @@ namespace Microsoft.Practices.Prism
         /// </summary>
         public static readonly DependencyProperty SourceProperty =
             DependencyProperty.Register(
-                "Source", 
-                typeof(object), 
+                "Source",
+                typeof(FrameworkElement), 
                 typeof(NameScopeBinding), 
                 new PropertyMetadata(null));
 

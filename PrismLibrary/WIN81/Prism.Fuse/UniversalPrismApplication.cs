@@ -9,6 +9,9 @@ using Windows.UI.ApplicationSettings;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+
+using Microsoft.Practices.Prism.ViewModel;
+
 #if WINDOWS_PHONE_APP
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
@@ -86,7 +89,7 @@ namespace Microsoft.Practices.Prism
 #endif
 
             // Register knowntypes with the SuspensionManager
-            RegisterKnownTypesForSerialization();
+            OnRegisterKnownTypesForSerialization();
 
             // Try to restore the state when resuming from suspension
             await RestoreStatus(args.PreviousExecutionState);
@@ -177,11 +180,13 @@ namespace Microsoft.Practices.Prism
         protected virtual void OnVisibilityChanged(object sender, VisibilityChangedEventArgs e)
         { }
 
-        /// <summary> 
-        /// Used for setting up the list of known types for the SuspensionManager, using the RegisterKnownType method.
+        /// <summary>
+        /// Used for setting up the list of known types for the SessionStateService, using the RegisterKnownType method.
         /// </summary>
-        protected virtual void RegisterKnownTypesForSerialization()
-        { }
+        protected virtual void OnRegisterKnownTypesForSerialization()
+        {
+            SuspensionManager.RegisterKnownType(typeof(BindableBase));
+        }
 
 #if WINDOWS_APP
         /// <summary>

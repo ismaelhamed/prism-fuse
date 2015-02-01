@@ -85,7 +85,7 @@ namespace Microsoft.Practices.Prism.Commands
         /// Executes the command with the provided parameter by invoking the <see cref="Action{Object}"/> supplied during construction.
         /// </summary>
         /// <param name="parameter"></param>
-        protected async Task Execute(object parameter)
+        protected virtual async Task Execute(object parameter)
         {
             await ExecuteMethod(parameter);
         }
@@ -95,7 +95,7 @@ namespace Microsoft.Practices.Prism.Commands
         /// </summary>
         /// <param name="parameter">The parameter to use when determining if this command can execute.</param>
         /// <returns>Returns <see langword="true"/> if the command can execute.  <see langword="False"/> otherwise.</returns>
-        protected bool CanExecute(object parameter)
+        protected virtual bool CanExecute(object parameter)
         {
             return CanExecuteMethod == null || CanExecuteMethod(parameter);
         }

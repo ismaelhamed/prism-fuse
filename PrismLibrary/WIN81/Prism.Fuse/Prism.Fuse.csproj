@@ -174,8 +174,9 @@
       <Link>ViewModel\ValidatableBindableBase.cs</Link>
     </Compile>
     <Compile Include="AppManifestHelper.cs" />
-    <Compile Include="Converters\BooleanConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="Converters\InvertBooleanConverter.cs" />
     <Compile Include="Converters\NullableValueConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="IoC\TypeExtender.cs" />

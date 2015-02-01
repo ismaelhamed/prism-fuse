@@ -9,8 +9,7 @@ namespace Microsoft.Practices.Prism.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var isVisible = (int)value > 0;
-            return isVisible ? Visibility.Visible : Visibility.Collapsed;
+            return (int)value > 0 ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

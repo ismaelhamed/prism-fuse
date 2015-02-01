@@ -109,6 +109,9 @@
     <Compile Include="..\..\WP8\Prism.Fuse\Converters\CountToVisibilityConverter.cs">
       <Link>Converters\CountToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\Converters\InvertBooleanConverter.cs">
+      <Link>Converters\InvertBooleanConverter.cs</Link>
+    </Compile>
     <Compile Include="..\..\WP8\Prism.Fuse\Converters\NullableConverter.cs">
       <Link>Converters\NullableConverter.cs</Link>
     </Compile>

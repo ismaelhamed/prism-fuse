@@ -84,11 +84,14 @@
     <Compile Include="..\..\WIN81\Prism.Fuse\AppManifestHelper.cs">
       <Link>AppManifestHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\WIN81\Prism.Fuse\Converters\BooleanConverter.cs">
-      <Link>Converters\BooleanConverter.cs</Link>
+    <Compile Include="..\..\WIN81\Prism.Fuse\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
     <Compile Include="..\..\WIN81\Prism.Fuse\Converters\CountToVisibilityConverter.cs">
       <Link>Converters\CountToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WIN81\Prism.Fuse\Converters\InvertBooleanConverter.cs">
+      <Link>Converters\InvertBooleanConverter.cs</Link>
     </Compile>
     <Compile Include="..\..\WIN81\Prism.Fuse\Converters\NullableValueConverter.cs">
       <Link>Converters\NullableValueConverter.cs</Link>

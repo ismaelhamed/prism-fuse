@@ -20,6 +20,8 @@ using System.Windows.Markup;
 
 [assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism;assembly=Prism.Fuse", "prism")]
 [assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism;assembly=Prism.Fuse", "Microsoft.Practices.Prism")]
+[assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism.Converters;assembly=Prism.Fuse", "prismConverters")]
+[assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism.Converters;assembly=Prism.Fuse", "Microsoft.Practices.Prism.Converters")]
 [assembly: XmlnsPrefix("clr-namespace:Microsoft.Practices.Prism.Shell;assembly=Prism.Fuse", "prismShell")]
 [assembly: XmlnsDefinition("clr-namespace:Microsoft.Practices.Prism.Shell;assembly=Prism.Fuse", "Microsoft.Practices.Prism.Shell")]
 

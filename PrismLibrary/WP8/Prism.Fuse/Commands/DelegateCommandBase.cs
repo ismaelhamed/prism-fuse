@@ -4,13 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Microsoft.Practices.Prism.Properties;
 
 namespace Microsoft.Practices.Prism.Commands
 {
-#if !NETFX_CORE
     using Microsoft.Practices.Prism.Properties;
-#endif
 
     /// <summary>
     /// An <see cref="ICommand"/> whose delegates can be attached for <see cref="Execute"/> and <see cref="CanExecute"/>.

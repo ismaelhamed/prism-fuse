@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -12,12 +11,11 @@ namespace Microsoft.Practices.Prism.Commands
     /// <summary>
     /// An <see cref="ICommand"/> whose delegates can be attached for <see cref="Execute"/> and <see cref="CanExecute"/>.
     /// </summary>
-    public abstract class DelegateCommandBase : ICommand
+    public abstract class DelegateCommandBase : ICommand, IActiveAware
     {
         private bool isActive;
-        private List<WeakReference> canExecuteChangedHandlers;
-        protected readonly Func<object, Task> ExecuteMethod;
-        protected readonly Func<object, bool> CanExecuteMethod;
+        private readonly Func<object, Task> executeMethod;
+        private readonly Func<object, bool> canExecuteMethod;
 
         /// <summary>
         /// Creates a new instance of a <see cref="DelegateCommandBase"/>, specifying both the execute action and the can execute function.
@@ -30,11 +28,11 @@ namespace Microsoft.Practices.Prism.Commands
                 throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
 
 #if NETFX_CORE
-            ExecuteMethod = arg => { executeMethod(arg); return Task.Delay(0); };
+            this.executeMethod = arg => { executeMethod(arg); return Task.Delay(0); };
 #else
-            ExecuteMethod = arg => { executeMethod(arg); return TaskEx.Delay(0); };
+            this.executeMethod = arg => { executeMethod(arg); return TaskEx.Delay(0); };
 #endif
-            CanExecuteMethod = canExecuteMethod;
+            this.canExecuteMethod = canExecuteMethod;
         }
 
         /// <summary>
@@ -47,17 +45,20 @@ namespace Microsoft.Practices.Prism.Commands
             if (executeMethod == null || canExecuteMethod == null)
                 throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
 
-            ExecuteMethod = executeMethod;
-            CanExecuteMethod = canExecuteMethod;
+            this.executeMethod = executeMethod;
+            this.canExecuteMethod = canExecuteMethod;
         }
 
         /// <summary>
-        /// Raises <see cref="ICommand.CanExecuteChanged"/> on the UI thread so every 
-        /// command invoker can requery <see cref="ICommand.CanExecute"/>.
+        /// Raises <see cref="ICommand.CanExecuteChanged"/> on the UI thread so every command invoker can requery <see cref="ICommand.CanExecute"/> to check if the <see cref="CompositeCommand"/> can execute.
         /// </summary>
         protected virtual void OnCanExecuteChanged()
         {
-            WeakEventHandlerManager.CallWeakReferenceHandlers(this, canExecuteChangedHandlers);
+            var handlers = CanExecuteChanged;
+            if (handlers != null)
+            {
+                handlers(this, EventArgs.Empty);
+            }
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Microsoft.Practices.Prism.Commands
         /// <param name="parameter"></param>
         protected virtual async Task Execute(object parameter)
         {
-            await ExecuteMethod(parameter);
+            await executeMethod(parameter);
         }
 
         /// <summary>
@@ -97,36 +98,13 @@ namespace Microsoft.Practices.Prism.Commands
         /// <returns>Returns <see langword="true"/> if the command can execute.  <see langword="False"/> otherwise.</returns>
         protected virtual bool CanExecute(object parameter)
         {
-            return CanExecuteMethod == null || CanExecuteMethod(parameter);
+            return canExecuteMethod == null || canExecuteMethod(parameter);
         }
 
         /// <summary>
-        /// Occurs when changes occur that affect whether or not the command should execute. You must keep a hard
-        /// reference to the handler to avoid garbage collection and unexpected results. See remarks for more information.
+        /// Occurs when changes occur that affect whether or not the command should execute. 
         /// </summary>
-        /// <remarks>
-        /// When subscribing to the <see cref="ICommand.CanExecuteChanged"/> event using 
-        /// code (not when binding using XAML) will need to keep a hard reference to the event handler. This is to prevent 
-        /// garbage collection of the event handler because the command implements the Weak Event pattern so it does not have
-        /// a hard reference to this handler. An example implementation can be seen in the CompositeCommand and CommandBehaviorBase
-        /// classes. In most scenarios, there is no reason to sign up to the CanExecuteChanged event directly, but if you do, you
-        /// are responsible for maintaining the reference.
-        /// </remarks>
-        /// <example>
-        /// The following code holds a reference to the event handler. The myEventHandlerReference value should be stored
-        /// in an instance member to avoid it from being garbage collected.
-        /// <code>
-        /// EventHandler myEventHandlerReference = new EventHandler(this.OnCanExecuteChanged);
-        /// command.CanExecuteChanged += myEventHandlerReference;
-        /// </code>
-        /// </example>
-        public virtual event EventHandler CanExecuteChanged
-        {
-            add { WeakEventHandlerManager.AddWeakReferenceHandler(ref canExecuteChangedHandlers, value, 2); }
-            remove { WeakEventHandlerManager.RemoveWeakReferenceHandler(canExecuteChangedHandlers, value); }
-        }
-
-        #region IsActive
+        public event EventHandler CanExecuteChanged;
 
         /// <summary>
         /// Gets or sets a value indicating whether the object is active.
@@ -161,8 +139,5 @@ namespace Microsoft.Practices.Prism.Commands
                 isActiveChangedHandler(this, EventArgs.Empty);
             }
         }
-
-        #endregion
-
     }
 }

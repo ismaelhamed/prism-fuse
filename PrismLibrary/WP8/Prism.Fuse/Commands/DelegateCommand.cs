@@ -104,19 +104,6 @@ namespace Microsoft.Practices.Prism.Commands
             }
         }
 
-        private DelegateCommand(Func<T, Task> executeMethod)
-            : this(executeMethod, o => true)
-        { }
-
-        private DelegateCommand(Func<T, Task> executeMethod, Func<T, bool> canExecuteMethod)
-            : base(o => executeMethod((T)o), o => canExecuteMethod((T)o))
-        {
-            if (executeMethod == null || canExecuteMethod == null)
-            {
-                throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
-            }
-        }
-
         /// <summary>
         /// Factory method to create a new instance of <see cref="DelegateCommand{T}"/> from an awaitable handler method.
         /// </summary>
@@ -158,6 +145,19 @@ namespace Microsoft.Practices.Prism.Commands
         {
             await base.Execute(parameter);
         }
+
+        private DelegateCommand(Func<T, Task> executeMethod)
+            : this(executeMethod, o => true)
+        { }
+
+        private DelegateCommand(Func<T, Task> executeMethod, Func<T, bool> canExecuteMethod)
+            : base(o => executeMethod((T)o), o => canExecuteMethod((T)o))
+        {
+            if (executeMethod == null || canExecuteMethod == null)
+            {
+                throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
+            }
+        }
     }
 
     /// <summary>
@@ -182,19 +182,6 @@ namespace Microsoft.Practices.Prism.Commands
         /// <param name="executeMethod">The <see cref="Action"/> to invoke when <see cref="ICommand.Execute"/> is called.</param>
         /// <param name="canExecuteMethod">The <see cref="Func{TResult}"/> to invoke when <see cref="ICommand.CanExecute"/> is called</param>
         public DelegateCommand(Action executeMethod, Func<bool> canExecuteMethod)
-            : base(o => executeMethod(), o => canExecuteMethod())
-        {
-            if (executeMethod == null || canExecuteMethod == null)
-            {
-                throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
-            }
-        }
-
-        private DelegateCommand(Func<Task> executeMethod)
-            : this(executeMethod, () => true)
-        { }
-
-        private DelegateCommand(Func<Task> executeMethod, Func<bool> canExecuteMethod)
             : base(o => executeMethod(), o => canExecuteMethod())
         {
             if (executeMethod == null || canExecuteMethod == null)
@@ -239,6 +226,19 @@ namespace Microsoft.Practices.Prism.Commands
         public virtual bool CanExecute()
         {
             return CanExecute(null);
+        }
+
+        private DelegateCommand(Func<Task> executeMethod)
+            : this(executeMethod, () => true)
+        { }
+
+        private DelegateCommand(Func<Task> executeMethod, Func<bool> canExecuteMethod)
+            : base(o => executeMethod(), o => canExecuteMethod())
+        {
+            if (executeMethod == null || canExecuteMethod == null)
+            {
+                throw new ArgumentNullException("executeMethod", Resources.DelegateCommandDelegatesCannotBeNull);
+            }
         }
     }
 }

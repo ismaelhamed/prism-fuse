@@ -114,8 +114,8 @@ namespace Microsoft.Practices.Prism.Shell
                 return;
 
             var command = target.Command;
-
-            if (target.IsEnabled && command != null)
+            // FIXME: if (target.IsEnabled && command != null)
+            if (command != null)
             {
                 target.IsEnabled = command.CanExecute(e.NewValue);
             }

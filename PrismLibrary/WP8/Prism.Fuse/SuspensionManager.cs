@@ -65,7 +65,7 @@ namespace Microsoft.Practices.Prism
         /// Save the current <see cref="SessionState"/>. 
         /// </summary>
         /// <returns>An asynchronous task that reflects when session state has been saved.</returns>
-        public async Task SaveAsync()
+        public Task SaveAsync()
         {
             try
             {
@@ -83,7 +83,12 @@ namespace Microsoft.Practices.Prism
 
                     // Encrypt the session data and write it to disk.
                     var data = ProtectedData.Protect(ms.ToArray(), null);
-                    await fileStream.WriteAsync(data, 0, data.Length);
+                    fileStream.Write(data, 0, data.Length);
+
+                    return TaskEx.FromResult(0);
+
+                    // FIXME: Somehow, this line fails without further notice in WP8.1 Silverlight
+                    // await fileStream.WriteAsync(data, 0, data.Length);
                 }
             }
             catch (Exception e)

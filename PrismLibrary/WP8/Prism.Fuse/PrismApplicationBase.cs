@@ -1,6 +1,4 @@
-﻿using Microsoft.Practices.Prism.ViewModel;
-
-namespace Microsoft.Practices.Prism
+﻿namespace Microsoft.Practices.Prism
 {
     using Microsoft.Practices.Prism.Logging;
 
@@ -9,7 +7,7 @@ namespace Microsoft.Practices.Prism
 #else
     public abstract class PrismApplicationBase<TFrame> : System.Windows.Application
 #endif
-        where TFrame : class, new()
+        where TFrame : class
     {
         /// <summary>
         /// Gets the <see cref="ILoggerFacade"/> for the application.

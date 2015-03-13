@@ -4,11 +4,11 @@ using System.Windows;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Microsoft.Practices.Prism.ViewModel;
 
 namespace Microsoft.Practices.Prism
 {
     using Microsoft.Practices.Prism.Navigation;
+    using Microsoft.Practices.Prism.ViewModel;
 
     public abstract class PhonePrismApplication : PrismApplicationBase<PhoneApplicationFrame>
     {

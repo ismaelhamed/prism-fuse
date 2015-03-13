@@ -9,9 +9,6 @@ using Windows.UI.ApplicationSettings;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
-using Microsoft.Practices.Prism.ViewModel;
-
 #if WINDOWS_PHONE_APP
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
@@ -20,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Microsoft.Practices.Prism
 {
     using Microsoft.Practices.Prism.Navigation;
+    using Microsoft.Practices.Prism.ViewModel;
 
     public abstract class UniversalPrismApplication : PrismApplicationBase<Frame>
     {
@@ -263,11 +261,13 @@ namespace Microsoft.Practices.Prism
         private void OnRootFrameFirstNavigated(object sender, NavigationEventArgs e)
         {
             var rootFrame = sender as Frame;
-            if (rootFrame != null)
+            if (rootFrame == null)
             {
-                rootFrame.ContentTransitions = transitions ?? new TransitionCollection { new NavigationThemeTransition() };
-                rootFrame.Navigated -= OnRootFrameFirstNavigated;
+                return;
             }
+
+            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection { new NavigationThemeTransition() };
+            rootFrame.Navigated -= this.OnRootFrameFirstNavigated;
         }
 #endif
 

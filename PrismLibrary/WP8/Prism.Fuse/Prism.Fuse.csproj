@@ -144,6 +144,7 @@
     <Compile Include="UriParsingHelper.cs" />
     <Compile Include="ViewLocator.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModelLocatorProvider.cs" />
     <Compile Include="ViewModel\BindableBase.cs" />
     <Compile Include="ViewModel\DataTemplateSelector.cs" />
     <Compile Include="ViewModel\ErrorsContainer.cs" />

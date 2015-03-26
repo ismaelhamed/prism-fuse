@@ -235,6 +235,9 @@
     <Compile Include="..\..\WP8\Prism.Fuse\ViewModelLocator.cs">
       <Link>ViewModelLocator.cs</Link>
     </Compile>
+    <Compile Include="..\..\WP8\Prism.Fuse\ViewModelLocatorProvider.cs">
+      <Link>ViewModelLocatorProvider.cs</Link>
+    </Compile>
     <Compile Include="..\..\WP8\Prism.Fuse\ViewModel\BindableBase.cs">
       <Link>ViewModel\BindableBase.cs</Link>
     </Compile>

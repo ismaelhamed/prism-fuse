@@ -94,7 +94,7 @@ namespace Microsoft.Practices.Prism
             }
 
             // Set a factory for the ViewModelLocator to use the default resolution mechanism to construct view models
-            ViewModelLocator.SetDefaultViewModelFactory(t => Container.Resolve(t));
+            ViewModelLocatorProvider.SetDefaultViewModelFactory(t => Container.Resolve(t));
         }
 
         /// <summary>
